@@ -1,16 +1,10 @@
 // chart variables
-var margin = {
-        top: 20,
-        right: 30,
-        bottom: 30,
-        left: 1
-    },
-    width = 1200 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-var barHeight = height / 2;
-var barWidth = 10;
-var x = d3.time.scale();
-var y = d3.scale.linear().domain([0, d3.max(daily.map(function(d) { return d.count; }))]).range([barHeight, 0]);
+var width = 1200,
+    height = 400,
+    barHeight = height / 2,
+    barWidth = 10,
+    x = d3.time.scale(),
+    y = d3.scale.linear().domain([0, d3.max(daily.map(function(d) { return d.count; }))]).range([barHeight, 0]);
 
 // helpers
 function mouseover(d, i) {
