@@ -7,7 +7,7 @@ require 'active_support/core_ext'
 
 def log
   max = 10000
-  Git.open("../#{@name}", {}).log(max).since('18 weeks ago')
+  Git.open("../#{@name}", {}).log(max).since('16 weeks ago')
 end
 
 def merges
@@ -22,14 +22,11 @@ def cleaned
 end
 
 def date_range
-  dates = cleaned.map { |a| a[0] }.uniq.sort
-  min, max = (dates - dates[1..-2]).map { |t| Date.new(t.year, t.month, t.day) }
-  min..max
+  Date.parse(16.weeks.ago.to_s)..Date.today
 end
 
 def formatted
-  days = date_range
-  data = days.inject({}) { |h,v| h[v.to_s] = {count: 0, messages: []}; h }
+  data = date_range.inject({}) { |h,v| h[v.to_s] = {count: 0, messages: []}; h }
   cleaned.each do |commit|
     time, message = commit
     data[time.strftime('%Y-%m-%d')][:count] += 1
