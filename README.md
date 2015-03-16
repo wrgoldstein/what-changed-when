@@ -16,6 +16,7 @@ install the necessary gems:
     gem install sinatra ruby-git haml activesupport
   
 run the sinatra app:
+
     ruby main.rb
     
 visit `localhost:4567/repo-of-interest`:
