@@ -3,6 +3,8 @@ require 'json'
 require 'active_support'
 require 'active_support/core_ext'
 
+#@name set by controller (main.rb)
+
 def log
   max = 10000
   Git.open("../#{@name}", {}).log(max).since('18 weeks ago')
