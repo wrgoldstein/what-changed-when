@@ -1,0 +1,12 @@
+- require './log_parser'
+
+!!!
+%html
+%head
+%script(src="http://d3js.org/d3.v3.min.js")
+%link{:rel => "stylesheet", :href => "style.css"}
+:javascript
+  daily = #{parsed_log};
+%body
+%h1 #{@name}
+%script(src="chart.js")

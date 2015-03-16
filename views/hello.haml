@@ -1,0 +1,5 @@
+- @entries = Dir.entries('..')
+!!!
+- @entries.each do |e|
+  %li
+    %a{ href: e } #{e}
