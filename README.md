@@ -1,5 +1,7 @@
 # what-changed-when
 
+**under construction**
+
 Minimal app for perusing commmit messages in a timeline.
 
 To run, clone this repo into whatever folder contains the repo of interest, e.g.
